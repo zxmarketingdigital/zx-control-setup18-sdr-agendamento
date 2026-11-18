@@ -69,8 +69,12 @@ class MensagemDoEvolution(unittest.TestCase):
         self.assertIn(AVISO, saida)
 
     def test_textos_sem_seu_mac(self):
-        for rel in ("README.md", "docs/PLAN.md", "skills/sdr-agendamento/SKILL.md", "skills/sdr-instalar/SKILL.md"):
+        for rel in ("README.md", "CLAUDE.md", "skills/sdr-agendamento/SKILL.md", "skills/sdr-instalar/SKILL.md"):
             self.assertNotIn("seu mac", (RAIZ / rel).read_text(encoding="utf-8").lower(), rel)
+        # docs/PLAN.md é interno e não vai para o repositório público.
+        plano = RAIZ / "docs" / "PLAN.md"
+        if plano.exists():
+            self.assertNotIn("seu mac", plano.read_text(encoding="utf-8").lower())
 
 
 if __name__ == "__main__":
