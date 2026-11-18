@@ -1,0 +1,6 @@
+# O motor usa SOMENTE a biblioteca padrão do Python 3.10 ou mais novo (urllib, sqlite3, zoneinfo).
+# Não há nada para instalar em macOS e Linux.
+#
+# No Windows o Python não traz a base de fusos horários; sem ela o motor usa o horário de Brasília fixo.
+# Para ter o fuso correto de qualquer cidade, instale a base:
+tzdata; sys_platform == "win32"

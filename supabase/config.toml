@@ -1,0 +1,69 @@
+# Supabase LOCAL do Setup 18 (SDR de Agendamento).
+# Usado só pelos testes de banco (scripts/test_db.sh). O projeto real do aluno
+# fica na nuvem; este arquivo não contém segredo nenhum.
+#
+# Portas na faixa 5562x para não colidir com outras stacks Supabase locais
+# (a padrão usa 5432x).
+
+project_id = "setup18-sdr"
+
+[api]
+enabled = true
+port = 55621
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 55622
+shadow_port = 55620
+health_timeout = "3m"
+major_version = 17
+
+[db.pooler]
+enabled = false
+port = 55629
+pool_mode = "transaction"
+default_pool_size = 20
+max_client_conn = 100
+
+[db.migrations]
+enabled = true
+
+# O seed de demonstração (seed_demo.sql) NÃO roda no db reset: os testes
+# precisam de banco vazio. Quem quer a demo carrega o arquivo à mão.
+[db.seed]
+enabled = false
+sql_paths = []
+
+[realtime]
+enabled = false
+
+[studio]
+enabled = false
+port = 55623
+
+[inbucket]
+enabled = false
+port = 55624
+
+[storage]
+enabled = false
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:55621"
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+
+[edge_runtime]
+enabled = false
+inspector_port = 55628
+
+[analytics]
+enabled = false
+port = 55627

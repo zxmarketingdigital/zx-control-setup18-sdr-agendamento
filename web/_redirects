@@ -1,0 +1,4 @@
+# Mantém o slug público e entrega a mesma página de agendamento.
+# Os arquivos da página ficam em /css e /js: no Cloudflare a regra vale antes dos arquivos,
+# então nada além do index.html pode morar dentro de /agendar/.
+/agendar/:slug  /agendar/  200

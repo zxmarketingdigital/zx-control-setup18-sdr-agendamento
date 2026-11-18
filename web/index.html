@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0D0D0D">
+  <meta name="referrer" content="no-referrer">
+  <title>ZX Control · Agente SDR</title>
+  <script src="/config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/painel.css">
+  <link rel="stylesheet" href="/css/views-b.css">
+  <!-- api.js carrega a versão fixa do Supabase somente no modo live. -->
+  <script defer src="/js/common.js"></script>
+  <script defer src="/js/api-live.js"></script>
+  <script defer src="/js/api-demo.js"></script>
+  <!-- O adapter demo precisa dos dados antes da inicialização de api.js. -->
+  <script defer src="/demo/demo-data.js"></script>
+  <script defer src="/js/api.js"></script>
+  <script defer src="/js/views/visao.js"></script>
+  <script defer src="/js/views/agenda.js"></script>
+  <script defer src="/js/views/disponibilidade.js"></script>
+  <script defer src="/js/views/conversas.js"></script>
+  <script defer src="/js/views/objecoes.js"></script>
+  <script defer src="/js/views/leads.js"></script>
+  <script defer src="/js/views/whatsapp.js"></script>
+  <script defer src="/js/views/config.js"></script>
+  <script defer src="/js/painel.js"></script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <div id="app"><main id="conteudo" class="pn-start" tabindex="-1"><div class="empty" role="status"><span class="spinner" aria-hidden="true"></span><p>Carregando...</p></div></main></div>
+  <div id="pn-toasts" class="pn-toasts" role="status" aria-live="polite" aria-atomic="false"></div>
+  <div id="pn-modals"></div>
+  <noscript><div class="banner pn-start">Ative o JavaScript no seu navegador para acessar o painel.</div></noscript>
+</body>
+</html>

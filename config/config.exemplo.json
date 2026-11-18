@@ -1,0 +1,7 @@
+{
+  "supabase": { "url": "", "service_role_key": "" },
+  "evolution": { "url": "http://localhost:8080", "api_key": "", "instance": "" },
+  "ai": { "provider": "gemini", "api_key": "", "model": "" },
+  "google_calendar": { "apps_script_url": "", "secret": "" },
+  "motor": { "poll_seconds": 15, "jobs_every_seconds": 60, "max_msgs_per_minute": 8 }
+}
